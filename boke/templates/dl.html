@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            color: #FC9D9A;
+            font-size: 30px;
+            font-family: '微软雅黑';
+        }
+        body{
+            background-image: url("/static/dl.jpeg");
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="color: #FC9D9A">登陆页面：</h1>
+<h1 style="color: #FC9D9A">系统当前时间为{{ time }}</h1>
+<form method = 'post' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{uf.as_p}}
+    <input type="submit" value = "ok" />
+</form>
+<br>
+<a href="{% url 'bk:zc' %}">注册</a>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#        <h1>欢迎来到登录页面</h1>#}
+{#        <form action="{% url 'bk:dl' %}" method="post">#}
+{#        用户名：<input type="text" name="name" placeholder="请输入您的用户名">#}
+{#        <br>#}
+{#        密码：<input type="password" name="pwd" placeholder="请输入您的密码">#}
+{#        <br>#}
+{#        <input type="submit" name="denglu" value="确认">#}
+{#        </form>#}
+</body>
+</html>

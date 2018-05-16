@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style type="text/css">
+        body{
+            background-image:url("/static/bk/dl.jpeg");
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>系统当前时间为{{ time }}</h1>
+<form action="{% url 'bk:xg' %}" method="post">
+    {% if aa %}
+        <input type="hidden" name="aa_id" value="{{ aa.id }}">
+        文章标题：
+        <input type="text" name="title" value="{{ aa.title }}"><br>
+        文章标题：
+        <input type="text" name="content" value="{{ aa.content }}"><br>
+    {% else %}
+        <input type="hidden" name="aa_id" value="0">
+        文章标题：
+        <input type="text" name="title">
+        <br>
+        文章内容：
+        <input type="text" name="content">
+        <br>
+    {% endif %}
+    <input type="submit" value="提交">
+    {% csrf_token %}
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            background-image:url("/static/bk/zz.jpeg");
+            color: #FC9D9A;
+        }
+    </style>
+</head>
+<body>
+
+
+<h1>系统当前时间为{{ time }}</h1>
+<form action="{% url 'bk:yhxg' %}" method="post">
+    {% if aa %}
+        <input type="hidden" name="bb_id" value="{{ aa.id }}">
+        用户名：
+        <input type="text" name="username" value="{{ aa.username }}"><br>
+        密码：
+        <input type="password" name="password" value="{{ aa.password }}"><br>
+        年龄：
+        <input type="text" name="age" value="{{ aa.age }}"><br>
+        性别：
+        <input type="text" name="sex" value="{{ aa.sex }}"><br>
+    {% else %}
+        <input type="hidden" name="bb_id" value="0">
+        用户名：
+        <input type="text" name="username" placeholder="请输入用户名"><br>
+        密码：
+        <input type="password" name="password" placeholder="请输入密码"><br>
+        年龄：
+        <input type="text" name="age" placeholder="请输入年龄"><br>
+        性别：
+        <input type="text" name="sex" placeholder="请输入性别"><br>
+    {% endif %}
+    <input type="submit" value="提交">
+    {% csrf_token %}
+</form>
+
+
+</body>
+</html>

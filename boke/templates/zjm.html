@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html
+
+">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            background-image: url("/static/bk/ee.jpeg");
+        }
+        .a{
+            color: beige;
+        }
+        a{
+            text-decoration: none;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1 class="a">系统当前时间为{{ time }}</h1>
+<div>
+    <p class="a"><h1 class="a">欢迎来到傲天博客，请问您想：</h1></p>
+    <span class="a"><a href="{% url 'bk:dl' %}" class="a">登录</a>&nbsp;&nbsp;</span><span><a href="{% url 'bk:zc' %}" class="a">注册</a></span>
+</div>
+</body>
+</html>

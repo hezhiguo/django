@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展示页面</title>
+    <style type="text/css">
+        h1{
+            font-size: 48px;
+            color: darkgoldenrod;
+        }
+        a{
+            text-decoration: none;
+            font-size: 40px;
+            color: hotpink;
+        }
+        body{
+            background-image: url("/static/bk/cc.jpeg");
+        }
+
+    </style>
+</head>
+<body>
+<h1>系统当前时间为{{ time }}</h1>
+<a href="{% url 'bk:yyyh' %}">修改用户</a> <br>
+<a href="{% url 'bk:zjm' %}">注销登录</a>
+{#<a href="{% url 'bk:zt' %}">时间++</a>#}
+{#<br>#}
+{#<a href="{% url 'bk:dt' %}">时间--</a>#}
+    <h1><a href="{% url 'bk:yh' 0%}">添加用户</a></h1>
+    <h1><a href="{% url 'bk:zj' 0 %}">添加文章</a></h1>
+{% for xxx in bb %}
+    <div>
+    <h1><a href="{% url 'bk:wz1' xxx.id %}" style="text-decoration: none;color: pink">{{ xxx.title }}</a></h1>
+    <p>{{ xxx.content }}</p>
+        <span>个人博客</span><span>{{ xxx.createtime }}</span>
+        <span>浏览</span>
+        &nbsp;
+        <span>阅读量</span>
+        <span>{{ xxx.read }}</span>
+        &nbsp;&nbsp;
+        <span>修改时间</span>
+        <span>{{ xxx.changetime }}</span>
+
+    </div>
+{% endfor %}
+
+    <br>
+    <br>
+    <div class="a1"></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            background-image:url("/static/bk/xx.jpeg");
+            color: #FC9D9A;
+        }
+    </style>
+</head>
+<body>
+    <h1>当前拥有用户为</h1>
+    <br>
+{% for xxx in aa %}
+    <h1><a href="{% url 'bk:yh' xxx.id %}" style="text-decoration: none;color:hotpink;">{{ xxx.username }}</a></h1>
+{% endfor %}
+
+</body>
+</html>

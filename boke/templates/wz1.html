@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章1</title>
+    <style type="text/css">
+        h1{
+            font-size: 48px;
+            color:beige;
+        }
+        h2{
+            font-size: 16px;
+            color: beige;
+        }
+        body {
+            background-image: url("/static/bk/dd.jpg");
+            color: beige;
+        }
+
+        a{
+            text-decoration: none;
+            color: beige;
+            font-size: 26px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>系统当前时间为{{ time }}</h1>
+<h1>{{ aa.title }}</h1>
+<br>
+<h2>{{ aa.content }}</h2>
+<br>
+<h2>创建时间为：{{ aa.createtime }}</h2>
+<br>
+<h2>上次修改时间为：{{ aa.changetime }}</h2>
+<br>
+
+<a href="{% url 'bk:zj' aa.id %}">修改文章</a>
+<br><br><br>
+<a href="{% url 'bk:muban' %}">返回上一级</a>
+
+</body>
+</html>

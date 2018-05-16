@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            background-image:url("/static/bk/cc.jpeg");
+        }
+    </style>
+</head>
+<body>
+<h1>欢迎来到注册页面</h1>
+<h1>系统当前时间为{{ time }}</h1>
+<br>
+
+<h1>注册页面：</h1>
+<form method = 'post' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{uf.as_p}}
+    <input type="submit" value = "ok" />
+</form>
+<br>
+<h1>系统当前时间为{{ time }}</h1>
+<a href="{% url 'bk:dl' %}">登陆</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{##}
+{#    <form method="post" action="/bk/zccg/">#}
+{#        <input type="hidden" name="user_id" value="0">#}
+{#        用户名：<input type="text" name="name" placeholder="请输入你想要创建的用户名">#}
+{#        <br>#}
+{#        密码：<input type="password" name="pwd" placeholder="请输入你的密码">#}
+{#        <br>#}
+{#        性别：<input type="radio" name="gender" value="男" checked="checked">男<input type="radio" name="gender" value="女">女#}
+{#        <br>#}
+{#        <input type="submit" value="提交">#}
+{#    </form>#}
+</body>
+</html>
